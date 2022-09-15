@@ -30,16 +30,16 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 
     [_BASE] = LAYOUT(
-        KC_ESC,  KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,   KC_F6,   KC_F7,   KC_F8,   KC_F9,   KC_F10,  KC_F11,  KC_F12,  KC_PSCR,           KC_MUTE,
-        KC_GRV,  KC_1,    KC_2,    KC_3,    KC_4,    KC_5,    KC_6,    KC_7,    KC_8,    KC_9,    KC_0,    KC_MINS, KC_EQL,  KC_BSPC,          KC_DEL,
-        KC_TAB,  KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,    KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,    KC_LBRC, KC_RBRC,                   KC_PGUP,
-        TT(_LOWER), KC_A, KC_S,    KC_D,    KC_F,    KC_G,    KC_H,    KC_J,    KC_K,    KC_L,    KC_SCLN, KC_QUOT, KC_NUHS, KC_ENT,           KC_PGDN,
-        KC_LSFTCAPSWIN, KC_NUBS, KC_Z, KC_X, KC_C,   KC_V,    KC_B,    KC_N,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH,          KC_RSFT, KC_UP,   KC_END,
-        KC_LCTL, KC_LGUI, KC_LALT,                            KC_SPC,                             KC_RALT, MO(_FN1),KC_RCTL, KC_LEFT, KC_DOWN, KC_RGHT
+        KC_ESC,                KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,   KC_F6,   KC_F7,   KC_F8,   KC_F9,   KC_F10,  KC_F11,  KC_F12,  KC_PSCR,          KC_MUTE,
+        KC_GRV,                KC_1,    KC_2,    KC_3,    KC_4,    KC_5,    KC_6,    KC_7,    KC_8,    KC_9,    KC_0,    KC_MINS, KC_EQL,  KC_BSPC,          KC_DEL,
+        KC_TAB,                KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,    KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,    KC_LBRC, KC_RBRC,                   KC_PGUP,
+        KC_CAPS,               KC_A,    KC_S,    KC_D,    KC_F,    KC_G,    KC_H,    KC_J,    KC_K,    KC_L,    KC_SCLN, KC_QUOT, KC_NUHS, KC_ENT,           KC_PGDN,
+        KC_LSFT,               KC_NUBS, KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,    KC_N,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH,          KC_RSFT, KC_UP,   KC_END,
+        KC_LCTL,               KC_LALT, KC_LCMD,                            KC_SPC,                             KC_RCMD, MO(_FN1),KC_RCTL, KC_LEFT, KC_DOWN, KC_RGHT
     ),
 
     [_FN1] = LAYOUT(
-        _______, KC_MYCM, KC_WHOM, KC_CALC, KC_MSEL, KC_MPRV, KC_MNXT, KC_MPLY, KC_MSTP, KC_MUTE, KC_VOLD, KC_VOLU, _______, KC_CALC,          _______,
+        _______, KC_MYCM, KC_WHOM, KC_CALC, KC_MSEL, KC_MPRV, KC_MNXT, KC_MPLY, KC_MSTP, KC_MUTE, KC_VOLD, KC_VOLU, _______, KC_CALC,          KC_MPLY,
         _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,          RGB_TOG,
         _______, _______, RGB_VAI, _______, _______, _______, _______, KC_PSCR, KC_SLCK, KC_PAUS, _______, _______, _______,                   KC_HOME,
         KC_CAPS, _______, RGB_VAD, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,          KC_END,
@@ -56,13 +56,22 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         _______, _______, _______,                            KC_BSPC,                            _______, _______, _______, RCTL(KC_LEFT), RCTL(KC_PGDN), RCTL(KC_RIGHT)
     ),
 
+    [_LINUC] = LAYOUT(
+        KC_ESC,                KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,   KC_F6,   KC_F7,   KC_F8,   KC_F9,   KC_F10,  KC_F11,  KC_F12,  KC_PSCR,          KC_MUTE,
+        KC_GRV,                KC_1,    KC_2,    KC_3,    KC_4,    KC_5,    KC_6,    KC_7,    KC_8,    KC_9,    KC_0,    KC_MINS, KC_EQL,  KC_BSPC,          KC_DEL,
+        KC_TAB,                KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,    KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,    KC_LBRC, KC_RBRC,                   KC_PGUP,
+        LT(_LOWER, KC_CAPS),   KC_A,    KC_S,    KC_D,    KC_F,    KC_G,    KC_H,    KC_J,    KC_K,    KC_L,    KC_SCLN, KC_QUOT, KC_NUHS, KC_ENT,           KC_PGDN,
+        KC_LSFT,               KC_NUBS, KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,    KC_N,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH,          KC_RSFT, KC_UP,   KC_END,
+        KC_LCTL,               KC_LGUI, KC_LALT,                            KC_SPC,                             KC_ALGR, MO(_FN1),KC_RCTL, KC_LEFT, KC_DOWN, KC_RGHT
+        ),
+
 #ifdef COLEMAK_LAYER_ENABLE
     [_COLEMAK] = LAYOUT(
         KC_ESC,  KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,   KC_F6,   KC_F7,   KC_F8,   KC_F9,   KC_F10,  KC_F11,  KC_F12,  KC_PSCR,           KC_MUTE,
         KC_GRV,  KC_1,    KC_2,    KC_3,    KC_4,    KC_5,    KC_6,    KC_7,    KC_8,    KC_9,    KC_0,    KC_MINS, KC_EQL,  KC_BSPC,          KC_DEL,
         KC_TAB,  KC_Q,    KC_W,    KC_F,    KC_P,    KC_G,    KC_J,    KC_L,    KC_U,    KC_Y,    KC_SCLN, KC_LBRC, KC_RBRC,                   KC_PGUP,
         TT(_LOWER), KC_A, KC_R,    KC_S,    KC_T,    KC_D,    KC_H,    KC_N,    KC_E,    KC_I,    KC_O,    KC_QUOT, KC_NUHS, KC_ENT,           KC_PGDN,
-        KC_LSFTCAPSWIN, KC_NUBS, KC_Z, KC_X, KC_C,   KC_V,    KC_B,    KC_K,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH,          KC_RSFT, KC_UP,   KC_END,
+        KC_LSFTCAPS, KC_NUBS, KC_Z, KC_X, KC_C,   KC_V,    KC_B,    KC_K,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH,          KC_RSFT, KC_UP,   KC_END,
         KC_LCTL, KC_LGUI, KC_LALT,                            KC_SPC,                             KC_RALT, MO(_FN1),KC_RCTL, KC_LEFT, KC_DOWN, KC_RGHT
     ),
 #endif // COLEMAK_LAYER_ENABLE
@@ -82,7 +91,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
             encoder_action_layerchange(clockwise);
         } else if (mods_state & MOD_BIT(KC_RSFT) ) { // If you are holding R shift, Page up/dn
             unregister_mods(MOD_BIT(KC_RSFT));
-            encoder_action_navpage(clockwise);
+            encoder_action_navpage(!clockwise);
             register_mods(MOD_BIT(KC_RSFT));
         } else if (mods_state & MOD_BIT(KC_LCTL)) {  // if holding Left Ctrl, navigate next/prev word
             encoder_action_navword(clockwise);
@@ -102,7 +111,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                 break;
             }
         }
-        return true;
+        return false;
     }
 #endif // ENCODER_ENABLE && !ENCODER_DEFAULTACTIONS_ENABLE
 
@@ -158,11 +167,24 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
             for (uint8_t i=0; i<ARRAYSIZE(LED_LIST_NUMPAD); i++) {
                 rgb_matrix_set_color(LED_LIST_NUMPAD[i], RGB_MAGENTA);
             }
-            rgb_matrix_set_color(LED_R4, RGB_MAGENTA);
-            rgb_matrix_set_color(LED_R5, RGB_MAGENTA);
-            rgb_matrix_set_color(LED_R6, RGB_MAGENTA);
+            rgb_matrix_set_color(LED_R4, RGB_ORANGE);
+            rgb_matrix_set_color(LED_R5, RGB_ORANGE);
+            rgb_matrix_set_color(LED_R6, RGB_ORANGE);
             break;
-        case _RAISE:
+//        case _RAISE:
+//            rgb_matrix_set_color(LED_R6, RGB_GREEN);
+//            rgb_matrix_set_color(LED_R7, RGB_GREEN);
+//            rgb_matrix_set_color(LED_R8, RGB_GREEN);
+//            break;
+        case _LINUC:
+            rgb_matrix_set_color(LED_DEL, RGB_ORANGE);
+            rgb_matrix_set_color(LED_PGUP, RGB_GREEN);
+            rgb_matrix_set_color(LED_PGDN, RGB_GREEN);
+            rgb_matrix_set_color(LED_END, RGB_GREEN);
+            rgb_matrix_set_color(LED_UP, RGB_GREEN);
+            rgb_matrix_set_color(LED_DOWN, RGB_GREEN);
+            rgb_matrix_set_color(LED_LEFT, RGB_GREEN);
+            rgb_matrix_set_color(LED_RIGHT, RGB_GREEN);
             rgb_matrix_set_color(LED_R6, RGB_GREEN);
             rgb_matrix_set_color(LED_R7, RGB_GREEN);
             rgb_matrix_set_color(LED_R8, RGB_GREEN);

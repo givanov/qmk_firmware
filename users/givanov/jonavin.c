@@ -202,7 +202,6 @@ uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
     switch (keycode) {
     case KC_SFTUP:
         return 300;
-    case KC_RAISESPC:
     case KC_LOWERSPC:
         return 450;
     default:
@@ -226,7 +225,7 @@ void keyboard_post_init_user(void) {
     keyboard_post_init_keymap();
     #ifdef STARTUP_NUMLOCK_ON
         activate_numlock(true); // turn on Num lock by default so that the numpad layer always has predictable results
-    #endif // STARTUP_NUMLOC_ON
+    #endif // STARTUP_NUMLOCK_ON
     #ifdef IDLE_TIMEOUT_ENABLE
         timeout_timer = timer_read(); // set inital time for ide timeout
     #endif

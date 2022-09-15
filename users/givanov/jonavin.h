@@ -24,9 +24,10 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 // LAYERS
 enum custom_user_layers {
     _BASE,
+    _LINUC,
     _FN1,
     _LOWER,
-    _RAISE,
+    _RAISE
 };
 
 // KEYCODES
@@ -58,7 +59,6 @@ enum custom_user_keycodes {
 #define CT_HOME RCTL(KC_HOME)
 #define CT_END  RCTL(KC_END)
 #define KC_SFTUP    RSFT_T(KC_UP) // Shift when held, Up arrow when tapped
-#define KC_RAISESPC LT(_RAISE,KC_SPC) // _RAISE layer mod when held, space when tapped
 #define KC_LOWERSPC LT(_LOWER,KC_SPC) // _LOWER layer mod when held, space when tapped
 
 
